@@ -1,10 +1,12 @@
+import os
+from pathlib import Path
 import json
  
 import pandas as pd
 from sklearn.model_selection import train_test_split
  
  
-TRIPS_PATH = '/course/trips_vista_2024_2025.csv'
+TRIPS_PATH = str(Path(os.environ.get("VISTA_DATA_DIR", Path(__file__).resolve().parents[1] / "data")) / "trips_vista_2024_2025.csv.gz")
 RANDOM_STATE = 90049
 TEST_SIZE = 0.25
 LONG_DISTANCE_KM = 30
