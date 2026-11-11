@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 import json
 import re
 
@@ -7,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
 
-DATA_PATH = '/course/person_vista_2024_2025_clean.csv'
+DATA_PATH = str(Path(os.environ.get("VISTA_DATA_DIR", Path(__file__).resolve().parents[1] / "data")) / "person_vista_2024_2025_clean.csv.gz")
 RANDOM_STATE = 90049
 TEST_SIZE = 0.25
 MAX_DEPTH = 4
