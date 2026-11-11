@@ -8,3 +8,7 @@ __pycache__/
 .env.*
 *.log
 .bash_history
+outputs/
+.venv/
+
+data/*.gz
