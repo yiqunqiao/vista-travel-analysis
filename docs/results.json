@@ -1,0 +1,332 @@
+{
+  "task4": {
+    "part1_comparisonA": {
+      "model": "LinearRegression (cumdist only)",
+      "trained_on": "Dataset1",
+      "mse_on_Dataset1_train": "58.6713062232",
+      "mse_on_Dataset3_test": "92.7538757171"
+    },
+    "part2_comparisonB": {
+      "trained_on": "Dataset2",
+      "single_feature_cumdist_only": {
+        "mse_on_Dataset2_train": "85.6935212864",
+        "mse_on_Dataset3_test": "79.7405347269"
+      },
+      "both_features_cumdist_and_starthour": {
+        "mse_on_Dataset2_train": "85.6178143376",
+        "mse_on_Dataset3_test": "79.5082777748"
+      },
+      "train_test_gap_comparison": {
+        "note": "gap = MSE on Dataset3 (test) minus MSE on the model's own training data, using the single-feature model in both cases -- a smaller gap on the larger dataset shows a training-set-size effect.",
+        "Dataset1_gap_n_households_30": "34.0825694940",
+        "Dataset2_gap_n_households_300": "-5.9529865595"
+      }
+    },
+    "part3_comparisonC": {
+      "model": "LinearRegression (cumdist and starthour), trained on Dataset2",
+      "mse_on_Dataset3_test_same_distribution": "79.5082777748",
+      "mse_on_Dataset4_test_shifted_distribution": "1762.1908236319",
+      "feature_centers": {
+        "note": "Mean of each feature -- compare Dataset4 to Dataset2/Dataset3 to see how far the shifted data sits from what the model was trained on.",
+        "Dataset2_mean_cumdist_km": "6.1661069060",
+        "Dataset3_mean_cumdist_km": "5.8687384762",
+        "Dataset4_mean_cumdist_km": "55.3668267956",
+        "Dataset2_mean_starthour": "13.4287907869",
+        "Dataset3_mean_starthour": "13.2636880165",
+        "Dataset4_mean_starthour": "12.6692975533"
+      }
+    },
+    "task4_setup_datasets_check": {
+      "Dataset1": {
+        "n_trips": 353,
+        "n_households": 30,
+        "feature_center_cumdist_km": "5.4116292068",
+        "feature_center_starthour": "14.0169971671",
+        "mean_travtime_min": "13.1359773371"
+      },
+      "Dataset2": {
+        "n_trips": 2605,
+        "n_households": 300,
+        "feature_center_cumdist_km": "6.1661069060",
+        "feature_center_starthour": "13.4287907869",
+        "mean_travtime_min": "15.3892514395"
+      },
+      "Dataset3": {
+        "n_trips": 3872,
+        "n_households": 452,
+        "feature_center_cumdist_km": "5.8687384762",
+        "feature_center_starthour": "13.2636880165",
+        "mean_travtime_min": "14.7982954545"
+      },
+      "Dataset4": {
+        "n_trips": 1267,
+        "n_households": 500,
+        "feature_center_cumdist_km": "55.3668267956",
+        "feature_center_starthour": "12.6692975533",
+        "mean_travtime_min": "63.4593528019"
+      }
+    }
+  },
+  "task3": {
+    "part2_trips_by_hour_summary": {
+      "ct_total": "19784",
+      "travdow_categories": [
+        "Friday",
+        "Monday",
+        "Saturday",
+        "Sunday",
+        "Thursday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "hour_categories": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "has_null": false,
+      "ct_min": "3",
+      "ct_max": "393",
+      "marginal_matches_ct_sum": true,
+      "marginal_at_8": "2003"
+    },
+    "part1_occupation_by_age_summary": {
+      "counts_total": "2859",
+      "occupation_categories": [
+        "Clerical and Administrative Workers",
+        "Community and Personal Service Workers",
+        "Labourers",
+        "Machinery Operators and Drivers",
+        "Managers",
+        "Professionals",
+        "Sales Workers",
+        "Technicians and Trades Workers"
+      ],
+      "age_group_categories": [
+        "15->19",
+        "20->24",
+        "25->29",
+        "30->34",
+        "35->39",
+        "40->44",
+        "45->49",
+        "50->54",
+        "55->59",
+        "60->64",
+        "65->69",
+        "70->74",
+        "75->79",
+        "80->84",
+        "85->89"
+      ],
+      "row_pct_row_sums": {
+        "Clerical and Administrative Workers": "100.0000000000",
+        "Community and Personal Service Workers": "100.0000000000",
+        "Labourers": "100.0000000000",
+        "Machinery Operators and Drivers": "100.0000000000",
+        "Managers": "100.0000000000",
+        "Professionals": "100.0000000000",
+        "Sales Workers": "100.0000000000",
+        "Technicians and Trades Workers": "100.0000000000"
+      },
+      "row_pct_min": "0.0000000000",
+      "row_pct_max": "19.2307692308",
+      "spot_check_sales_workers_15_19": "19.2307692308"
+    }
+  },
+  "task1": {
+    "part1_features": {
+      "n_features": 35,
+      "X_train_shape": [
+        2603,
+        35
+      ],
+      "X_test_shape": [
+        858,
+        35
+      ]
+    },
+    "part2_features": {
+      "n_features": 10,
+      "X_train_shape": [
+        2603,
+        10
+      ],
+      "X_test_shape": [
+        858,
+        10
+      ]
+    },
+    "task1_results": {
+      "n_train": 2603,
+      "n_test": 858,
+      "config_A_macro_f1": 0.6581,
+      "config_B_macro_f1": 0.7133
+    }
+  },
+  "task2": {
+    "part1_comparisonA": {
+      "DecisionTree": {
+        "measure": "feature_importance",
+        "top_features": [
+          {
+            "feature": "occ_Professionals",
+            "value": "0.3112384895"
+          },
+          {
+            "feature": "occ_Managers",
+            "value": "0.2301968715"
+          },
+          {
+            "feature": "occ_Clerical and Administrative Workers",
+            "value": "0.2271436037"
+          }
+        ]
+      },
+      "LogisticRegression": {
+        "measure": "coefficient",
+        "top_features": [
+          {
+            "feature": "age_15->19",
+            "value": "-1.9622835444"
+          },
+          {
+            "feature": "age_75->79",
+            "value": "1.7068143231"
+          },
+          {
+            "feature": "occ_Machinery Operators and Drivers",
+            "value": "-1.5619391483"
+          }
+        ]
+      }
+    },
+    "part2_comparisonB": [
+      {
+        "model": "DecisionTree",
+        "total_age_importance": "0.0394097074"
+      },
+      {
+        "model": "LogisticRegression",
+        "total_age_importance": "6.0925147677"
+      }
+    ],
+    "part3_comparisonC": {
+      "feature": "anzsco1",
+      "DecisionTree": {
+        "measure": "feature_importance",
+        "onehot": {
+          "value": "0.7685789647",
+          "note": "sum across the 8 one-hot occ_* columns"
+        },
+        "label_encoding": {
+          "value": "0.6403869298",
+          "note": "single occ_label column"
+        }
+      },
+      "LogisticRegression": {
+        "measure": "coefficient",
+        "onehot": {
+          "value": "8.2390515086",
+          "note": "sum of abs(coefficient) across the 8 one-hot occ_* columns"
+        },
+        "label_encoding": {
+          "value": "0.0008289705",
+          "note": "single occ_label column, raw signed coefficient"
+        }
+      },
+      "returned_keys_check": {
+        "logreg_label": true,
+        "dt_label": true,
+        "X_label": true
+      }
+    },
+    "task2_evaluation_results": {
+      "LogisticRegression": {
+        "onehot": {
+          "accuracy": "0.7121034078",
+          "precision_macro": "0.6879628350",
+          "recall_macro": "0.6626934300",
+          "f1_macro": "0.6687069090"
+        },
+        "label_encoding": {
+          "accuracy": "0.6698002350",
+          "precision_macro": "0.6564576554",
+          "recall_macro": "0.5684209897",
+          "f1_macro": "0.5447595115"
+        }
+      },
+      "DecisionTree": {
+        "onehot": {
+          "accuracy": "0.7132784959",
+          "precision_macro": "0.6909937888",
+          "recall_macro": "0.6945271579",
+          "f1_macro": "0.6925432362"
+        },
+        "label_encoding": {
+          "accuracy": "0.6991774383",
+          "precision_macro": "0.6800004570",
+          "recall_macro": "0.6883953983",
+          "f1_macro": "0.6825071119"
+        }
+      }
+    },
+    "task2_setup_encoding_check": {
+      "agegroup": {
+        "n_categories": 15,
+        "one_hot_columns": 15
+      },
+      "sex": {
+        "n_categories": 2,
+        "one_hot_columns": 2
+      },
+      "anzsco1": {
+        "n_categories": 8,
+        "one_hot_columns": 8,
+        "label_encoding_map": {
+          "Clerical and Administrative Workers": 0,
+          "Community and Personal Service Workers": 1,
+          "Labourers": 2,
+          "Machinery Operators and Drivers": 3,
+          "Managers": 4,
+          "Professionals": 5,
+          "Sales Workers": 6,
+          "Technicians and Trades Workers": 7
+        }
+      },
+      "worked_example": {
+        "note": "One row from the data, showing how each of its encoded features actually came out. Category vocabulary is fit on the training rows only.",
+        "agegroup": {
+          "true_category": "30->34",
+          "one_hot_active_column": "age_30->34"
+        },
+        "sex": {
+          "true_category": "Male",
+          "one_hot_active_column": "sex_Male"
+        },
+        "anzsco1": {
+          "true_category": "Professionals",
+          "one_hot_active_column": "occ_Professionals",
+          "label_encoded_value": 5
+        }
+      }
+    }
+  }
+}
