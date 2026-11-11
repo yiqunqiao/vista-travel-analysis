@@ -1,0 +1,48 @@
+{
+  "task1": {
+    "status": "passed",
+    "seconds": 18.93,
+    "artifacts": [
+      "part1_features.json",
+      "part2_features.json",
+      "run.log",
+      "setup_dataframe.csv",
+      "task1_results.json"
+    ]
+  },
+  "task2": {
+    "status": "passed",
+    "seconds": 5.96,
+    "artifacts": [
+      "part1_comparisonA.json",
+      "part2_comparisonB.json",
+      "part3_comparisonC.json",
+      "run.log",
+      "task2_evaluation_confusion_matrices.png",
+      "task2_evaluation_results.json",
+      "task2_setup_encoding_check.json"
+    ]
+  },
+  "task3": {
+    "status": "passed",
+    "seconds": 3.82,
+    "artifacts": [
+      "part1_occupation_by_age.png",
+      "part1_occupation_by_age_summary.json",
+      "part2_trips_by_hour.png",
+      "part2_trips_by_hour_summary.json",
+      "run.log"
+    ]
+  },
+  "task4": {
+    "status": "passed",
+    "seconds": 2.47,
+    "artifacts": [
+      "part1_comparisonA.json",
+      "part2_comparisonB.json",
+      "part3_comparisonC.json",
+      "run.log",
+      "task4_setup_datasets_check.json"
+    ]
+  }
+}
