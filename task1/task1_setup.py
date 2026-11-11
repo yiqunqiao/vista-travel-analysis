@@ -1,8 +1,10 @@
+import os
+from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-PERSON_PATH = "/course/person_vista_2024_2025_clean.csv"
+PERSON_PATH = str(Path(os.environ.get("VISTA_DATA_DIR", Path(__file__).resolve().parents[1] / "data")) / "person_vista_2024_2025_clean.csv.gz")
 
 CARLICENCE_ORDER = {
     "No Car Licence": 0,
